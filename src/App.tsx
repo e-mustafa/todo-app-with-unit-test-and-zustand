@@ -1,6 +1,5 @@
-import TaskForm from "./components/pattern-container-presentational/task-form";
-import TaskList from "./components/pattern-container-presentational/task-list";
-
+import TaskForm from './components/pattern-container-presentational/task-form';
+import TaskList from './components/pattern-container-presentational/task-list';
 
 export type Task = {
 	id: string;
@@ -44,7 +43,7 @@ export default function App() {
 	// }
 
 	return (
-		<div className='grid place-items-center min-h-dvh p-4 bg-[url("./ac54a128942c750799c2c1fe144d2467.jpg")] bg-no-repeat bg-cover'>
+		<div className='grid place-items-center min-h-dvh p-4 bg-[url("/background-01.jpg")] bg-no-repeat bg-cover'>
 			<div className='fixed inset-0 bg-black/50'></div>
 			<div className='flex flex-col gap-4 p-4 shadow shadow-primary/50 w-full max-w-[92dvw] sm:max-w-lg min-h-[400px] bg-background/50 backdrop-blur-md rounded-lg'>
 				<h1 className='text-3xl font-bold text-center' data-testid='app-title'>

@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useRef, useState } from 'react';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 
 export default function TaskForm({ addTask }: { addTask: (title: string) => void }) {
 	const [value, setValue] = useState('');

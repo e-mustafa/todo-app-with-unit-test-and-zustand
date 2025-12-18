@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Task } from '../App';
-import { cn } from '../lib/utils';
-import { Button } from './ui/button';
-import { Checkbox } from './ui/checkbox';
-import { Input } from './ui/input';
+import type { Task } from '../../App';
+import { cn } from '../../lib/utils';
+import { Button } from '../ui/button';
+import { Checkbox } from '../ui/checkbox';
+import { Input } from '../ui/input';
 
 interface TaskItemProps extends React.HTMLAttributes<HTMLDivElement> {
 	task: Task;
@@ -35,7 +35,10 @@ export default function TaskItem({ task, actions }: TaskItemProps) {
 	}, [isEditing]);
 
 	return (
-		<div data-testid='task-div' className='flex items-center gap-2 justify-between px-3 py-2 bg-accent/60 rounded-md max-w-full'>
+		<div
+			data-testid='task-div'
+			className='flex items-center gap-2 justify-between px-3 py-2 bg-accent/60 rounded-md max-w-full'
+		>
 			<Checkbox
 				id={task.id}
 				data-testid='task-checkbox'
@@ -54,7 +57,10 @@ export default function TaskItem({ task, actions }: TaskItemProps) {
 						className={cn('w-full focus:ring-0 focus-visible:ring-0')}
 					/>
 				) : (
-					<h4 data-testid='task-title' className={cn('font-medium max-w-full truncate', task.completed && 'line-through opacity-50')}>
+					<h4
+						data-testid='task-title'
+						className={cn('font-medium max-w-full truncate', task.completed && 'line-through opacity-50')}
+					>
 						{task.title}
 					</h4>
 				)}

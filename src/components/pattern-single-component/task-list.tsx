@@ -1,5 +1,5 @@
-import type { Task } from '../App';
-import { cn } from '../lib/utils';
+import type { Task } from '../../App';
+import { cn } from '../../lib/utils';
 import TaskItem from './task-item';
 
 interface TaskListProps {

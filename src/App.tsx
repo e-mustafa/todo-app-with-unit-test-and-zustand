@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import TaskForm from './components/task-form';
-import TaskList from './components/task-list';
+import TaskForm from "./components/pattern-container-presentational/task-form";
+import TaskList from "./components/pattern-container-presentational/task-list";
+
 
 export type Task = {
 	id: string;
@@ -15,31 +15,33 @@ export type Task = {
 // ];
 
 export default function App() {
-	const [listData, setListData] = useState<Task[]>(() => {
-		const storedTasks = localStorage.getItem('tasks');
-		return storedTasks ? JSON.parse(storedTasks) : [];
-	});
+	// const [listData, setListData] = useState<Task[]>(() => {
+	// 	const storedTasks = localStorage.getItem('tasks');
+	// 	return storedTasks ? JSON.parse(storedTasks) : [];
+	// });
 
-	useEffect(() => {
-		localStorage.setItem('tasks', JSON.stringify(listData));
-	}, [listData]);
+	// const { tasks } = useStore();
 
-	function addTask(title: string) {
-		const NewTask = { id: Date.now().toString(), title, completed: false };
-		setListData([...listData, NewTask]);
-	}
+	// useEffect(() => {
+	// 	localStorage.setItem('tasks', JSON.stringify(tasks));
+	// }, [tasks]);
 
-	function editTask(id: string, title: string) {
-		setListData(listData.map((task) => (task.id === id ? { ...task, title } : task)));
-	}
+	// function addTask(title: string) {
+	// 	const NewTask = { id: Date.now().toString(), title, completed: false };
+	// 	setListData([...listData, NewTask]);
+	// }
 
-	function completeTask(id: string) {
-		setListData(listData.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
-	}
+	// function editTask(id: string, title: string) {
+	// 	setListData(listData.map((task) => (task.id === id ? { ...task, title } : task)));
+	// }
 
-	function deleteTask(id: string) {
-		setListData(listData.filter((task) => task.id !== id));
-	}
+	// function completeTask(id: string) {
+	// 	setListData(listData.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
+	// }
+
+	// function deleteTask(id: string) {
+	// 	setListData(listData.filter((task) => task.id !== id));
+	// }
 
 	return (
 		<div className='grid place-items-center min-h-dvh p-4 bg-[url("./ac54a128942c750799c2c1fe144d2467.jpg")] bg-no-repeat bg-cover'>
@@ -48,8 +50,10 @@ export default function App() {
 				<h1 className='text-3xl font-bold text-center' data-testid='app-title'>
 					To DO APP
 				</h1>
-				<TaskForm addTask={addTask} />
-				<TaskList listData={listData} actions={{ editTask, completeTask, deleteTask }} />
+				{/* <TaskForm addTask={addTask} />
+				<TaskList listData={listData} actions={{ editTask, completeTask, deleteTask }} /> */}
+				<TaskForm />
+				<TaskList />
 			</div>
 		</div>
 	);

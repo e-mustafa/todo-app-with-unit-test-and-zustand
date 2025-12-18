@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import TaskForm from './components/pattern-single-component/task-listnen/task-form';
-import TaskList from './components/task-list';
+import TaskForm from './components/pattern-single-component/task-form';
+import TaskList from './components/pattern-single-component/task-list';
 
 export type Task = {
 	id: string;

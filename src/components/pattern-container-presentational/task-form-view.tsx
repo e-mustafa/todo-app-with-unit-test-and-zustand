@@ -31,7 +31,7 @@ export function TaskFormView({ value, isError, onInputChange, onSubmit, inputRef
 				)}
 			</div>
 
-			<Button type='submit' onClick={onSubmit} data-testid='task-add-btn'>
+			<Button type='button' onClick={onSubmit} data-testid='task-add-btn'>
 				Add
 			</Button>
 		</form>
